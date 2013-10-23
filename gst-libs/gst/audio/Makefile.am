@@ -67,7 +67,7 @@ nodist_libgstaudio_@GST_API_VERSION@include_HEADERS = \
 	audio-enumtypes.h
 
 libgstaudio_@GST_API_VERSION@_la_CFLAGS = $(GST_PLUGINS_BASE_CFLAGS) $(GST_BASE_CFLAGS) $(GST_CFLAGS) \
-		$(ORC_CFLAGS)
+		$(ORC_CFLAGS) -Wno-tautological-constant-out-of-range-compare
 libgstaudio_@GST_API_VERSION@_la_LIBADD = \
   $(top_builddir)/gst-libs/gst/tag/libgsttag-@GST_API_VERSION@.la \
   $(GST_BASE_LIBS) $(GST_LIBS) $(LIBM) $(ORC_LIBS)
