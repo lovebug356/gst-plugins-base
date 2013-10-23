@@ -156,6 +156,10 @@ AM_CONDITIONAL(HAVE_VALGRIND, test ! "x$VALGRIND_PATH" = "xno")
 dnl check for gobject-introspection
 GOBJECT_INTROSPECTION_CHECK([1.31.1])
 
+dnl special warning flags for gst/printf
+AS_COMPILER_FLAG([-Wno-format-nonliteral], [PRINTF_CFLAGS="-Wno-format-nonliteral"])
+AC_SUBST(PRINTF_CFLAGS)
+
 dnl check for documentation tools
 GTK_DOC_CHECK([1.12])
 AG_GST_PLUGIN_DOCS([1.12])

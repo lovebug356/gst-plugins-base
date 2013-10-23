@@ -1,6 +1,6 @@
 man_MANS = \
 	gst-discoverer-@GST_API_VERSION@.1 \
-	gst-play-@GST_API_VERSION@.1	
+	gst-play-@GST_API_VERSION@.1
 
 bin_PROGRAMS = \
 	gst-discoverer-@GST_API_VERSION@ \
@@ -21,7 +21,7 @@ LDADD = $(top_builddir)/gst-libs/gst/pbutils/libgstpbutils-@GST_API_VERSION@.la 
 	$(top_builddir)/gst-libs/gst/video/libgstvideo-@GST_API_VERSION@.la \
 	$(GST_BASE_LIBS) $(GST_LIBS)
 
-AM_CFLAGS = $(GST_PLUGINS_BASE_CFLAGS) $(GST_BASE_CFLAGS) $(GST_CFLAGS)
+AM_CFLAGS = $(GST_PLUGINS_BASE_CFLAGS) $(GST_BASE_CFLAGS) $(GST_CFLAGS) $(PRINTF_CFLAGS)
 
 Android.mk: Makefile.am
 	androgenizer -:PROJECT gst-discoverer-@GST_API_VERSION@ \
